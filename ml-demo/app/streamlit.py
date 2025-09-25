@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 import joblib
 
-with open('rf_model_pca.pkl', 'rb') as f:
+with open('/ml-demo/app/rf_model_pca.pkl', 'rb') as f:
     saved = joblib.load(f)
 model_columns = saved["columns"]
 
