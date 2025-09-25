@@ -1,8 +1,12 @@
 import streamlit as st
 import requests
 import joblib
+from pathlib import Path
 
-with open('/ml-demo/app/rf_model_pca.pkl', 'rb') as f:
+
+pkl_path = Path(__file__).parent / "rf_model_pca.pkl"
+
+with open(pkl_path, 'rb') as f:
     saved = joblib.load(f)
 model_columns = saved["columns"]
 
