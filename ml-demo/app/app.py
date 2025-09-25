@@ -8,10 +8,10 @@ import uvicorn
 
 app = FastAPI()
 
-
-if __name__ == "__main__":
+if __name__ == "__app__":
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run("app:app", host="0.0.0.0", port=port, reload=True)
+
 origins = ["*"]
 
 app.add_middleware(

@@ -3,6 +3,7 @@ import requests
 import joblib
 from pathlib import Path
 
+api_url = "https://python-ml-applications.onrender.com/"
 
 pkl_path = Path(__file__).parent / "rf_model_pca.pkl"
 
@@ -40,7 +41,7 @@ if st.button("Predict"):
         "sex": sex,
         "habitat_simple": habitat_simple
     }
-    response = requests.post("http://127.0.0.1:8000/", json=data)
+    response = requests.post(api_url, json=data)
     if response.status_code == 200:
         prediction = response.json()["prediction"]
         st.success(f"Prediction: {prediction}")
